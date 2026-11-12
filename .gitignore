@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+# SDK vendor (SEUIC) tidak ikut di-commit ke repo publik; simpan di app/libs secara lokal / repo privat
+# app/libs/*.jar

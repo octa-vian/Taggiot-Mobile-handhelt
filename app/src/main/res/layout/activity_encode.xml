@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <include android:id="@+id/topBar" layout="@layout/view_top_bar_light" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="130dp"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <!-- stepper -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    android:elevation="1dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView android:id="@+id/stepDot1" style="@style/StepDot" android:text="1" />
+                    <TextView android:id="@+id/stepLabel1" style="@style/StepLabel" android:text="@string/enc_step_item" />
+                    <View style="@style/StepLine" />
+                    <TextView android:id="@+id/stepDot2" style="@style/StepDot" android:text="2" />
+                    <TextView android:id="@+id/stepLabel2" style="@style/StepLabel" android:text="@string/enc_step_tag" />
+                    <View style="@style/StepLine" />
+                    <TextView android:id="@+id/stepDot3" style="@style/StepDot" android:text="3" />
+                    <TextView android:id="@+id/stepLabel3" style="@style/StepLabel" android:text="@string/enc_step_write" />
+                </LinearLayout>
+
+                <!-- barang -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView style="@style/Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enc_selected" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilItem"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="@string/enc_pick_item"
+                            app:boxCornerRadiusBottomEnd="14dp"
+                            app:boxCornerRadiusBottomStart="14dp"
+                            app:boxCornerRadiusTopEnd="14dp"
+                            app:boxCornerRadiusTopStart="14dp"
+                            app:boxStrokeColor="@color/brand_500">
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/actvItem"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView android:id="@+id/tvItemSub" style="@style/Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="@color/ink_2" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- EPC -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_epc_card"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView style="@style/Text.Overline" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/enc_epc_label" android:textColor="@color/white_70" />
+                        <TextView android:id="@+id/tvScheme" style="@style/Text.Badge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill_glass" android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvEpc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.04"
+                        android:lineSpacingExtra="2dp"
+                        android:text="–"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvUri"
+                        style="@style/Text.Mono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textColor="@color/white_70" />
+                </LinearLayout>
+
+                <!-- deteksi tag -->
+                <LinearLayout
+                    android:id="@+id/boxDetect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_detect_idle"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <FrameLayout
+                        android:id="@+id/detectCircle"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_circle_idle">
+
+                        <ImageView
+                            android:id="@+id/ivDetect"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_tag"
+                            app:tint="@color/white" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/tvDetectTitle" style="@style/Text.BodyStrong" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                        <TextView android:id="@+id/tvDetectSub" style="@style/Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/ink_2" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- mode massal -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:contentPaddingBottom="8dp"
+                    app:contentPaddingTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView style="@style/Text.BodyMStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enc_bulk" />
+                            <TextView style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enc_bulk_sub" />
+                        </LinearLayout>
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/swBulk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvLastResult"
+                    style="@style/Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:textColor="@color/ink_2" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout style="@style/ActionSheet">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnWrite"
+            style="@style/Widget.Taggiot.Button.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enc_write"
+            app:icon="@drawable/ic_tag" />
+
+        <TextView
+            style="@style/Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="@string/enc_rule" />
+    </LinearLayout>
+</FrameLayout>

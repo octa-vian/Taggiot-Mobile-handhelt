@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="@drawable/bg_bottom_nav"
+    android:elevation="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+
+    <LinearLayout android:id="@+id/navHome" style="@style/NavItem">
+        <ImageView android:id="@+id/navHomeIcon" style="@style/NavIcon" android:src="@drawable/ic_home" />
+        <TextView android:id="@+id/navHomeLabel" style="@style/NavLabel" android:text="@string/nav_home" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navTasks" style="@style/NavItem">
+        <ImageView android:id="@+id/navTasksIcon" style="@style/NavIcon" android:src="@drawable/ic_tasks" />
+        <TextView android:id="@+id/navTasksLabel" style="@style/NavLabel" android:text="@string/nav_tasks" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/navScan"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/bg_fab_scan"
+        android:clickable="true"
+        android:contentDescription="@string/nav_scan"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_scan"
+            app:tint="@color/on_brand" />
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/navSync" style="@style/NavItem">
+        <ImageView android:id="@+id/navSyncIcon" style="@style/NavIcon" android:src="@drawable/ic_sync" />
+        <TextView android:id="@+id/navSyncLabel" style="@style/NavLabel" android:text="@string/nav_sync" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navProfile" style="@style/NavItem">
+        <ImageView android:id="@+id/navProfileIcon" style="@style/NavIcon" android:src="@drawable/ic_user" />
+        <TextView android:id="@+id/navProfileLabel" style="@style/NavLabel" android:text="@string/nav_profile" />
+    </LinearLayout>
+</LinearLayout>

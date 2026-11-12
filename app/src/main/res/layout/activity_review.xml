@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero"
+            android:orientation="vertical"
+            android:paddingBottom="18dp">
+
+            <include android:id="@+id/topBar" layout="@layout/view_top_bar_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/tvResult" style="@style/Text.Display" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="–" android:textColor="@color/white" />
+                    <TextView android:id="@+id/tvResultLabel" style="@style/Text.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/review_found" android:textColor="@color/white_70" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    style="@style/Text.BodyMStrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_pill_glass"
+                    android:paddingStart="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout style="@style/GlassStat">
+                    <TextView android:id="@+id/tvMissing" style="@style/GlassStat.Value" android:text="0" android:textColor="#FFC2C2" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/review_missing" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvExtra" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/review_extra" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvUnknown" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/review_unknown" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNote"
+            style="@style/Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/review_note"
+            android:textColor="@color/ink_2" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDiffs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_card"
+                android:clipToPadding="false"
+                android:elevation="2dp"
+                android:paddingBottom="150dp" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                style="@style/Text.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="@string/review_empty"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/sheet" style="@style/ActionSheet">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReopen"
+                style="@style/Widget.Taggiot.Button.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/review_reopen"
+                app:icon="@drawable/ic_sync" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/review_close"
+                app:icon="@drawable/ic_check" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

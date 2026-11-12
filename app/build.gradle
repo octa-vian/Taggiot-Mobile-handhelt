@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+}
+
+// SDK SEUIC bersifat opsional: bila app/libs/uhf.jar ada, adaptor SEUIC ikut dikompilasi.
+def seuicJar = file('libs/uhf.jar')
+def hasSeuicSdk = seuicJar.exists()
+
+android {
+    namespace 'com.taggiot.handheld'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.taggiot.handheld'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0-mvp'
+
+        buildConfigField 'boolean', 'HAS_SEUIC_SDK', hasSeuicSdk.toString()
+        // URL Site Gateway default; bisa diubah di layar Pengaturan atau oleh TCC (desired_config)
+        buildConfigField 'String', 'DEFAULT_SITE_GATEWAY_URL', '"https://sitegw.local:8443/"'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ['room.schemaLocation': "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (hasSeuicSdk) {
+                java.srcDirs += 'src/seuic/java'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.8.7'
+
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    implementation 'androidx.work:work-runtime:2.9.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+
+    if (hasSeuicSdk) {
+        // uhf.jar hanya STUB (semua method melempar "Stub!"). Implementasi asli adalah system library
+        // com.seuic.uhf di firmware handheld, jadi cukup compileOnly — jangan ikut dikemas ke APK.
+        compileOnly files('libs/uhf.jar')
+        // scankey.jar (SDK ScanKey SEUIC): juga stub; aslinya system library com.seuic.scankey.
+        compileOnly files('libs/scankey.jar')
+    }
+
+    testImplementation 'junit:junit:4.13.2'
+}

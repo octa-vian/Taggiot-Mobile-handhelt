@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero"
+            android:orientation="vertical"
+            android:paddingBottom="60dp">
+
+            <include android:id="@+id/topBar" layout="@layout/view_top_bar_dark" />
+
+            <LinearLayout
+                android:id="@+id/boxLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_glass"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_light_btn"
+                    android:importantForAccessibility="no"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_pin"
+                    app:tint="@color/brand_700" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/tvLocation" style="@style/Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" />
+                    <TextView android:id="@+id/tvLocationSub" style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white_70" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvLive"
+                    style="@style/Text.Badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_glass"
+                    android:text="@string/ready"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-46dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" app:contentPadding="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                    <TextView android:id="@+id/tvExpected" style="@style/Text.TitleL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="–" />
+                    <TextView style="@style/Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/count_expected" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" app:contentPadding="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                    <TextView android:id="@+id/tvRead" style="@style/Text.TitleL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/status_ok" />
+                    <TextView style="@style/Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/count_read" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" app:contentPadding="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                    <TextView android:id="@+id/tvServer" style="@style/Text.TitleL" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                    <TextView style="@style/Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/count_server" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPending"
+            style="@style/Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/ink_2" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="170dp" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                style="@style/Text.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="@string/count_empty" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/ActionSheet">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHoldScan"
+            style="@style/Widget.Taggiot.Button.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_scan"
+            app:icon="@drawable/ic_scan" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSend"
+                style="@style/Widget.Taggiot.Button.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sync_now"
+                app:icon="@drawable/ic_cloud_up" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFinish"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/count_finish" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

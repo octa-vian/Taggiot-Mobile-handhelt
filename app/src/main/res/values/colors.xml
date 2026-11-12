@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tema hijau Taggiot. Primary #00BF63 (brand_500), hover #D7FFD6 (brand_100).
+     Teks/ikon di atas latar terang memakai brand_700/600 (putih di atas brand_500 hanya 2,4:1);
+     teks di atas isian brand_500 memakai on_brand. -->
+<resources>
+    <color name="brand_900">#003D1F</color>
+    <color name="brand_700">#006B38</color>
+    <color name="brand_600">#008A49</color>
+    <color name="brand_500">#00BF63</color>
+    <color name="brand_300">#7BE8A8</color>
+    <color name="brand_100">#D7FFD6</color>
+    <color name="brand_50">#EEFFED</color>
+    <color name="on_brand">#00301A</color>
+    <color name="ripple_hover">#B3D7FFD6</color>
+    <color name="tg_green_500">#46AD62</color>
+
+    <color name="status_ok">#23944F</color>
+    <color name="status_ok_bg">#E3F4E9</color>
+    <color name="status_ok_line">#C8E9D3</color>
+    <color name="status_warn">#C27A06</color>
+    <color name="status_warn_bg">#FDF1DC</color>
+    <color name="status_bad">#D23C3C</color>
+    <color name="status_bad_bg">#FCE8E8</color>
+    <color name="status_idle">#6B7A89</color>
+    <color name="status_idle_bg">#EDF1F5</color>
+    <color name="status_info">#006B38</color>
+    <color name="status_info_bg">#D7FFD6</color>
+
+    <color name="ink">#0D1B2A</color>
+    <color name="ink_2">#4A5A6A</color>
+    <color name="ink_3">#8C9AA8</color>
+    <color name="line">#E4EAF0</color>
+    <color name="bg">#F3F6F9</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_16">#29FFFFFF</color>
+    <color name="white_12">#1FFFFFFF</color>
+    <color name="scrim">#66003D1F</color>
+</resources>

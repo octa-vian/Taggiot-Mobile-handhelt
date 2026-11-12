@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gutter">16dp</dimen>
+    <dimen name="radius_sm">12dp</dimen>
+    <dimen name="radius_md">16dp</dimen>
+    <dimen name="radius_lg">20dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="touch_min">48dp</dimen>
+    <dimen name="icon_tile">44dp</dimen>
+    <dimen name="hero_radius">36dp</dimen>
+</resources>

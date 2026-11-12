@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="190dp"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <include android:id="@+id/topBar" layout="@layout/view_top_bar_light" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/IconTile"
+                        android:background="@drawable/bg_tile_blue"
+                        android:src="@drawable/ic_box"
+                        app:tint="@color/brand_600" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/tvTargetName" style="@style/Text.BodyStrong" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2" android:ellipsize="end" />
+                        <TextView android:id="@+id/tvTargetSub" style="@style/Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/ink_2" />
+                        <TextView android:id="@+id/tvTargetEpc" style="@style/Text.Mono" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <FrameLayout
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp">
+
+                <com.taggiot.handheld.ui.widget.GaugeView
+                    android:id="@+id/gauge"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/tvValue" style="@style/Text.Display" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                    <TextView style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/find_signal" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvProximity"
+                style="@style/Text.Badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_badge_idle"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/status_idle"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" app:contentPadding="12dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/tvRssi" style="@style/Text.TitleM" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="–" />
+                        <TextView style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/find_rssi" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" app:contentPadding="12dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/tvPower" style="@style/Text.TitleM" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="–" />
+                        <TextView style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/find_power" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" app:contentPadding="12dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/tvLast" style="@style/Text.TitleM" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="–" />
+                        <TextView style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/find_last" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout style="@style/ActionSheet">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHoldScan"
+            style="@style/Widget.Taggiot.Button.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_find"
+            app:icon="@drawable/ic_radar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChange"
+                style="@style/Widget.Taggiot.Button.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/find_change" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFound"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/find_found"
+                app:icon="@drawable/ic_check" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

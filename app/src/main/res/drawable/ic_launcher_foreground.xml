@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ikon peluncur: tag RFID hijau-tua di latar hijau (108dp, zona aman 66dp di tengah) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <group android:translateX="30" android:translateY="30" android:scaleX="2" android:scaleY="2">
+        <path android:pathData="M3,12V5a2,2 0 0,1 2,-2h7l9,9 -9,9z" android:fillColor="#00000000"
+            android:strokeColor="#FF00301A" android:strokeWidth="1.8" android:strokeLineJoin="round" />
+        <path android:pathData="M6.5,8a1.5,1.5 0 1,0 3,0a1.5,1.5 0 1,0 -3,0" android:fillColor="#FF00301A" />
+        <path android:pathData="M12.5,10.5a3,3 0 0,1 0,4.2M14.6,8.4a6,6 0 0,1 0,8.4" android:fillColor="#00000000"
+            android:strokeColor="#FF006B38" android:strokeWidth="1.6" android:strokeLineCap="round" />
+    </group>
+</vector>

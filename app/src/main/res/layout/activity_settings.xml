@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <include android:id="@+id/topBar" layout="@layout/view_top_bar_light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <!-- Akun -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_account" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView android:id="@+id/tvAvatar" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_avatar" android:gravity="center" android:textColor="@color/on_brand" android:textSize="15sp" android:textStyle="bold" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/tvOperator" style="@style/Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:id="@+id/tvRole" style="@style/Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnLogout" style="@style/Widget.Taggiot.Button.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="44dp" android:text="@string/settings_logout" app:icon="@drawable/ic_logout" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnChangePin" style="@style/Widget.Taggiot.Button.Soft" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:minHeight="44dp" android:text="@string/settings_change_pin" app:icon="@drawable/ic_pin" />
+
+            <TextView android:id="@+id/tvTechOnly" style="@style/Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/settings_tech_only" />
+
+            <!-- Site Gateway -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_sgw" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:id="@+id/groupSgw" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/settings_sgw_url" style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSgwUrl" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textUri" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swDemo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/settings_demo" android:textColor="@color/ink" />
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swGmf" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/settings_gmf" android:textColor="@color/ink" />
+                    <TextView android:id="@+id/tvPairInfo" style="@style/Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnRepair" style="@style/Widget.Taggiot.Button.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:minHeight="44dp" android:text="@string/settings_repair" app:icon="@drawable/ic_lock" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Reader -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_reader" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:id="@+id/groupReader" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:id="@+id/tvReaderInfo" style="@style/Text.Mono" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/ink_2" />
+                    <RadioGroup android:id="@+id/rgReader" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                        <RadioButton android:id="@+id/rbAuto" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/settings_reader_auto" />
+                        <RadioButton android:id="@+id/rbSeuic" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/settings_reader_seuic" />
+                        <RadioButton android:id="@+id/rbFake" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/settings_reader_fake" />
+                    </RadioGroup>
+                    <TextView android:id="@+id/tvReadPower" style="@style/Text.BodyMStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" />
+                    <com.google.android.material.slider.Slider android:id="@+id/slReadPower" android:layout_width="match_parent" android:layout_height="wrap_content" android:stepSize="1" android:valueFrom="5" android:valueTo="30" />
+                    <TextView android:id="@+id/tvWritePower" style="@style/Text.BodyMStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <com.google.android.material.slider.Slider android:id="@+id/slWritePower" android:layout_width="match_parent" android:layout_height="wrap_content" android:stepSize="1" android:valueFrom="5" android:valueTo="30" />
+                    <TextView android:id="@+id/tvMinRssi" style="@style/Text.BodyMStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <com.google.android.material.slider.Slider android:id="@+id/slMinRssi" android:layout_width="match_parent" android:layout_height="wrap_content" android:stepSize="1" android:valueFrom="-90" android:valueTo="-40" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tombol pemicu -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_trigger" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:id="@+id/groupTrigger" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <TextView android:id="@+id/tvKeys" style="@style/Text.Mono" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/ink_2" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="vertical"
+            android:baselineAligned="false">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnCaptureKey" style="@style/Widget.Taggiot.Button.Soft" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="44dp" android:text="@string/settings_trigger_capture" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnResetKeys" style="@style/Widget.Taggiot.Button.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:minHeight="44dp" android:text="@string/settings_trigger_reset" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Barcode -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_barcode" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:id="@+id/groupBarcode" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/settings_bc_action" style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etBcAction" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textNoSuggestions" android:textSize="12sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:hint="@string/settings_bc_extra" style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etBcExtra" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- EPC & suara -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_epc" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/tilPrefix" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/settings_gs1_prefix" style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPrefix" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLength="12" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/swSound" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/settings_sound" android:textColor="@color/ink" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Tentang -->
+            <TextView style="@style/SettingsHeader" android:text="@string/settings_about" />
+            <com.google.android.material.card.MaterialCardView style="@style/SettingsCard">
+                <TextView android:id="@+id/tvAbout" style="@style/Text.Mono" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="4dp" android:textColor="@color/ink_2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_save"
+                app:icon="@drawable/ic_check" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

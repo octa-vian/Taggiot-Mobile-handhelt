@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taggiot Handheld</string>
+
+    <!-- umum -->
+    <string name="back">Kembali</string>
+    <string name="more">Menu lain</string>
+    <string name="start_scan">Mulai scan</string>
+    <string name="stop_scan">Stop scan</string>
+    <string name="start_find">Mulai cari</string>
+    <string name="stop_find">Stop cari</string>
+    <string name="find_unknown_tag">Tag tidak terdaftar</string>
+    <string name="trigger_hint">atau tekan tombol shutter di handheld (tekan lagi untuk berhenti)</string>
+    <string name="reading">Membaca</string>
+    <string name="ready">Siap</string>
+    <string name="cancel">Batal</string>
+    <string name="ok">OK</string>
+    <string name="save">Simpan</string>
+    <string name="demo_footer">Mode demo · data contoh · PIN 123456</string>
+
+    <!-- login -->
+    <string name="login_welcome">Selamat datang</string>
+    <string name="login_title">Masuk ke Taggiot Handheld</string>
+    <string name="login_op_no">Nomor operator</string>
+    <string name="login_op_hint">3–10 digit</string>
+    <string name="login_scan_badge">Scan badge</string>
+    <string name="login_pin">PIN 6 digit</string>
+    <string name="login_button">Masuk</string>
+    <string name="logo_gmf">Logo GMF AeroAsia</string>
+    <string name="logo_taggiot">Logo Taggiot</string>
+
+    <!-- beranda -->
+    <string name="home_morning">Selamat pagi,</string>
+    <string name="home_afternoon">Selamat siang,</string>
+    <string name="home_evening">Selamat sore,</string>
+    <string name="home_night">Selamat malam,</string>
+    <string name="home_active_task">Sesi operator · perangkat</string>
+    <string name="home_no_task">Tidak ada tugas aktif. Buka Tugas untuk memulai.</string>
+    <string name="home_quick_menu">Menu cepat</string>
+    <string name="tile_inventory">Inventory</string>
+    <string name="tile_inventory_sub">Scan bebas semua tag</string>
+    <string name="tile_find">Cari Alat</string>
+    <string name="tile_find_sub">Kode alat / EPC</string>
+    <string name="tile_encode">Bind Tag</string>
+    <string name="tile_encode_sub">Site non-GMF saja</string>
+    <string name="tile_count">Drawer Check &amp; Hitung</string>
+    <string name="notifications">Notifikasi</string>
+
+    <!-- nav -->
+    <string name="nav_home">Beranda</string>
+    <string name="nav_tasks">Tugas</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_sync">Sinkron</string>
+    <string name="nav_profile">Profil</string>
+
+    <!-- inventory -->
+    <string name="inv_title">Inventory</string>
+    <string name="inv_unique">tag unik terbaca</string>
+    <string name="inv_rate">tag/detik</string>
+    <string name="inv_registered">dikenal</string>
+    <string name="inv_unknown">tidak dikenal</string>
+    <string name="inv_all">Semua</string>
+    <string name="inv_filter_known">Dikenal</string>
+    <string name="inv_filter_unknown">Tidak dikenal</string>
+    <string name="inv_empty">Tekan Mulai scan atau tombol shutter untuk membaca tag di sekitar. Tekan lagi untuk berhenti.</string>
+    <string name="inv_clear">Hapus</string>
+    <string name="inv_save">Jadikan count</string>
+
+    <!-- cari tag -->
+    <string name="find_title">Cari Alat</string>
+    <string name="find_signal">kekuatan sinyal</string>
+    <string name="find_rssi">RSSI dBm</string>
+    <string name="find_power">Power dBm</string>
+    <string name="find_last">terakhir</string>
+    <string name="find_change">Ganti target</string>
+    <string name="find_found">Ditemukan</string>
+    <string name="find_next">Target berikutnya</string>
+    <string name="find_target_hint">Kode alat GMF, EPC, atau scan</string>
+
+    <!-- tugas -->
+    <string name="tasks_title">Drawer Check &amp; Hitung</string>
+    <string name="tasks_active">Terbuka</string>
+    <string name="tasks_approval">Review</string>
+    <string name="tasks_done">Selesai</string>
+    <string name="tasks_stat_open">sesi terbuka</string>
+    <string name="tasks_stat_approval">perlu review</string>
+    <string name="tasks_stat_locations">EPC belum terkirim</string>
+    <string name="tasks_continue">Lanjutkan</string>
+    <string name="tasks_start">Mulai</string>
+    <string name="tasks_empty">Tidak ada sesi di tab ini. Drawer check dimulai di GMF (Tools → Drawer check → Start), lalu muat ulang.</string>
+
+    <!-- sesi opname -->
+    <string name="count_system">Sistem</string>
+    <string name="count_read">Terbaca di sini</string>
+    <string name="count_diff">Selisih</string>
+    <string name="count_col_item">Barang</string>
+    <string name="count_col_sys">Sis</string>
+    <string name="count_col_read">Baca</string>
+    <string name="count_col_status">Status</string>
+    <string name="count_find_missing">Cari yang kurang</string>
+    <string name="count_close">Tutup lokasi</string>
+    <string name="count_change_location">Ganti</string>
+    <string name="count_scan_location">Scan barcode lokasi atau pilih dari daftar</string>
+
+    <!-- encode -->
+    <string name="enc_title">Encode Tag</string>
+    <string name="enc_step_item">Barang</string>
+    <string name="enc_step_tag">Dekatkan tag</string>
+    <string name="enc_step_write">Tulis</string>
+    <string name="enc_selected">Barang dipilih</string>
+    <string name="enc_pick_item">Pilih barang / scan barcode</string>
+    <string name="enc_epc_label">EPC yang akan ditulis</string>
+    <string name="enc_bulk">Mode massal</string>
+    <string name="enc_bulk_sub">Nomor seri naik otomatis</string>
+    <string name="enc_write">Tulis &amp; verifikasi</string>
+    <string name="enc_rule">Ditolak otomatis bila lebih dari 1 tag terbaca</string>
+
+    <!-- sinkron -->
+    <string name="sync_title">Sinkronisasi</string>
+    <string name="sync_outbox">Antrean keluar</string>
+    <string name="sync_master">Ringkasan</string>
+    <string name="sync_items">barang &amp; aset</string>
+    <string name="sync_tags">tag terdaftar</string>
+    <string name="sync_now">Kirim sekarang</string>
+    <string name="sync_empty">Tidak ada data dalam antrean.</string>
+
+    <!-- pengaturan -->
+    <string name="settings_title">Profil &amp; Pengaturan</string>
+    <string name="settings_account">Akun</string>
+    <string name="settings_logout">Keluar</string>
+    <string name="settings_sgw">Site Gateway</string>
+    <string name="settings_sgw_url">URL Site Gateway</string>
+    <string name="settings_demo">Mode demo (Site Gateway tiruan, tanpa jaringan)</string>
+    <string name="settings_reader">Reader UHF</string>
+    <string name="settings_reader_auto">Otomatis (SEUIC bila terdeteksi)</string>
+    <string name="settings_reader_seuic">SEUIC (uhf.jar)</string>
+    <string name="settings_reader_fake">Simulasi</string>
+    <string name="settings_read_power">Power baca</string>
+    <string name="settings_write_power">Power tulis</string>
+    <string name="settings_min_rssi">Filter RSSI minimum (Inventory)</string>
+    <string name="settings_trigger">Tombol pemicu</string>
+    <string name="settings_trigger_capture">Rekam tombol pemicu</string>
+    <string name="settings_trigger_reset">Kembalikan default</string>
+    <string name="settings_barcode">Scanner barcode (broadcast)</string>
+    <string name="settings_bc_action">Intent action</string>
+    <string name="settings_bc_extra">Nama extra data</string>
+    <string name="settings_epc">Encode EPC</string>
+    <string name="settings_gs1_prefix">GS1 company prefix (6–12 digit)</string>
+    <string name="settings_sound">Bunyi &amp; getar</string>
+    <string name="settings_about">Tentang perangkat</string>
+    <string name="settings_save">Simpan pengaturan</string>
+    <string name="settings_tech_only">Pengaturan perangkat hanya bisa diubah supervisor.</string>
+
+    <!-- pairing -->
+    <string name="pair_step">Langkah 1 · sekali per perangkat</string>
+    <string name="pair_title">Pasangkan ke Site Gateway</string>
+    <string name="pair_sub">Admin site membuat handheld ini di Site Gateway dan memberi kode pairing 8 karakter (berlaku 15 menit, sekali pakai).</string>
+    <string name="pair_demo_switch">Mode demo (Site Gateway tiruan di aplikasi)</string>
+    <string name="pair_code">Kode pairing</string>
+    <string name="pair_hint">Device key disimpan terenkripsi di Android Keystore. Pasang ulang aplikasi = pairing baru.</string>
+    <string name="pair_button">Pasangkan perangkat</string>
+
+    <!-- hitung -->
+    <string name="tasks_sub">Sesi dari Site Gateway</string>
+    <string name="count_expected">Diharapkan</string>
+    <string name="count_server">Diterima server</string>
+    <string name="count_finish">Selesai baca</string>
+    <string name="count_empty">Tekan Mulai scan atau tombol shutter untuk membaca isi laci, tekan lagi untuk berhenti. EPC tersimpan di perangkat dan dikirim per batch.</string>
+
+    <!-- review -->
+    <string name="review_found">alat ditemukan / diharapkan</string>
+    <string name="review_missing">hilang</string>
+    <string name="review_extra">lebih / area lain</string>
+    <string name="review_unknown">tidak dikenal</string>
+    <string name="review_note">Alat yang dipinjam (released) ikut tercatat hilang di sini; GMF menampilkan pinjamannya di sebelahnya. Ketuk baris untuk resolusi atau cari.</string>
+    <string name="review_empty">Tidak ada selisih. Semua alat yang diharapkan terbaca.</string>
+    <string name="review_reopen">Hitung ulang</string>
+    <string name="review_close">Tutup sesi</string>
+
+    <!-- pengaturan -->
+    <string name="settings_gmf">Site GMF (bind &amp; replace disembunyikan)</string>
+    <string name="settings_repair">Pasangkan ulang perangkat</string>
+    <string name="settings_change_pin">Ganti PIN</string>
+</resources>

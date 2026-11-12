@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero"
+            android:orientation="vertical"
+            android:paddingBottom="18dp">
+
+            <include android:id="@+id/topBar" layout="@layout/view_top_bar_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout style="@style/GlassStat">
+                    <TextView android:id="@+id/tvStatOpen" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/tasks_stat_open" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvStatApproval" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/tasks_stat_approval" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvStatLocations" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/tasks_stat_locations" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_segment"
+            android:elevation="1dp"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView android:id="@+id/segActive" style="@style/Segment" android:text="@string/tasks_active" />
+            <TextView android:id="@+id/segApproval" style="@style/Segment" android:text="@string/tasks_approval" />
+            <TextView android:id="@+id/segDone" style="@style/Segment" android:text="@string/tasks_done" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTasks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="104dp" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                style="@style/Text.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/tasks_empty"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp" />
+</FrameLayout>

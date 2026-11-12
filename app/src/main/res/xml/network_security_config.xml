@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Site Gateway berjalan di LAN tenant dengan sertifikat dari step-ca (Server CA Taggiot).
+  Produksi: taruh root CA Taggiot sebagai res/raw/taggiot_root_ca.pem lalu aktifkan baris
+  <certificates src="@raw/taggiot_root_ca"/> dan hapus <certificates src="user"/>.
+  mTLS (sertifikat perangkat) diatur di ApiClient, bukan di file ini.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+            <!-- <certificates src="@raw/taggiot_root_ca" /> -->
+        </trust-anchors>
+    </base-config>
+</network-security-config>

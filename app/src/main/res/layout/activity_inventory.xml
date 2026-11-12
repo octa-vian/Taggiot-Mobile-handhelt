@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero"
+            android:orientation="vertical"
+            android:paddingBottom="18dp">
+
+            <include android:id="@+id/topBar" layout="@layout/view_top_bar_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCount"
+                        style="@style/Text.Display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/Text.Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/inv_unique"
+                        android:textColor="@color/white_70" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvLive"
+                    style="@style/Text.BodyMStrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_pill_glass"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/ready"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout style="@style/GlassStat">
+                    <TextView android:id="@+id/tvRate" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/inv_rate" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvRegistered" style="@style/GlassStat.Value" android:text="0" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/inv_registered" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/GlassStat" android:layout_marginStart="10dp">
+                    <TextView android:id="@+id/tvUnknown" style="@style/GlassStat.Value" android:text="0" android:textColor="#FFC2C2" />
+                    <TextView style="@style/GlassStat.Label" android:text="@string/inv_unknown" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            app:checkedChip="@+id/chipAll"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip android:id="@+id/chipAll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/inv_all" />
+            <com.google.android.material.chip.Chip android:id="@+id/chipKnown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/inv_filter_known" />
+            <com.google.android.material.chip.Chip android:id="@+id/chipUnknown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/inv_filter_unknown" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTags"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="190dp" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                style="@style/Text.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:text="@string/inv_empty" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/ActionSheet">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHoldScan"
+            style="@style/Widget.Taggiot.Button.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_scan"
+            app:icon="@drawable/ic_scan" />
+
+        <TextView
+            style="@style/Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="@string/trigger_hint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                style="@style/Widget.Taggiot.Button.Secondary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/inv_clear"
+                app:icon="@drawable/ic_trash" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="@string/inv_save"
+                app:icon="@drawable/ic_check"
+                app:iconSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
